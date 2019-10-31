@@ -121,8 +121,6 @@ func (p *Plan) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-func Execute(plans []Plan, currentTime time.Time) {
-	for _, p := range plans {
-		p.Schedule.Execute(p.Name, p.Task, currentTime)
-	}
+func (p *Plan) Execute(currentTime time.Time) {
+	p.Schedule.Execute(p.Name, p.Task, currentTime)
 }
