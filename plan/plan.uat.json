@@ -1,0 +1,328 @@
+[
+	{
+		"Name":   "RecoverTopicPlan",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["0h"]
+		},
+		"Task": {
+			"Name": "RecoverTopicPlan",
+			"Params": {}
+		}
+	},
+	{
+		"Name":   "ArchiveTasks",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["0h"]
+		},
+		"Task": {
+			"Name": "ArchiveTasks",
+			"Params": {
+				"DefaultBackLogArchiveThreshold": 30,
+				"DefaultDoneArchiveThreshold":    14
+			}
+		}
+	},
+
+	
+	{
+		"Name":   "TEST_AutoCreateNormalCard",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["0h"]
+		},
+		"Task": {
+			"Name": "GenerateNormalTask",
+			"Params": {
+				"BoardID": "370e538a-ae18-4d35-b261-54cc658d8ecc",
+				"TaskCreateParams": {
+					"Title":       "Auto Create normal card",
+					"Location":    "Morning Post Centre, 22 Dai Fat Street, Tai Po Industrial Estate, Tai Po",
+					"Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat posuere enim, et cursus elit mattis quis. Integer malesuada varius ipsum, sit amet sagittis turpis iaculis sit amet. Vestibulum risus diam, fermentum vitae libero eu, condimentum malesuada ex. Quisque tincidunt in urna in consectetur. Aliquam eget sollicitudin risus.",
+					"TagNames": ["tag1", "tag2"],
+					"ContactInfo": "Chan Tai Man,12345678",
+					"AssigneeIDs": [
+						"5b5f603dc7710300012db324"
+					],
+					"CategoryID":"76a0972f-f37d-47b6-8d98-da3c3d2644ff"
+				},
+				"ChildTaskParams": {
+					"BoardServiceID": "c4cdb7e2-433a-418d-bbb7-818a15d469b0",
+					"Title":       "Auto Create normal card",
+					"Location":    "Morning Post Centre, 22 Dai Fat Street, Tai Po Industrial Estate, Tai Po",
+					"Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat posuere enim, et cursus elit mattis quis. Integer malesuada varius ipsum, sit amet sagittis turpis iaculis sit amet. Vestibulum risus diam, fermentum vitae libero eu, condimentum malesuada ex. Quisque tincidunt in urna in consectetur. Aliquam eget sollicitudin risus.",
+					"TagNames": [],
+					"ContactInfo": "Chan Tai Man,12345678",
+					"CategoryID":"76a0972f-f37d-47b6-8d98-da3c3d2644ff"
+				},
+				"Start": "0h",
+				"End": "23h59m59s",
+				"Due": "0h"
+			}
+		}
+	},
+	{
+		"Name":   "TEST_AutoCreateMethodeCard",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["0h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "370e538a-ae18-4d35-b261-54cc658d8ecc",
+				"TaskWithcTopicCreateParams": {
+					"Title":"Auto Create Swing card (with story)",
+					"Description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat posuere enim, et cursus elit mattis quis. Integer malesuada varius ipsum, sit amet sagittis turpis iaculis sit amet. Vestibulum risus diam, fermentum vitae libero eu, condimentum malesuada ex. Quisque tincidunt in urna in consectetur. Aliquam eget sollicitudin risus.",
+					"Location":"Morning Post Centre, 22 Dai Fat Street, Tai Po Industrial Estate, Tai Po",
+					"CategoryID":"76a0972f-f37d-47b6-8d98-da3c3d2644ff",
+					"TopicSummary": "Aliquam in nisl orci. Nunc vehicula magna ac tempus hendrerit. Integer posuere scelerisque quam non eleifend. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+					"TagNames":[
+						"tag1",
+						"tag2"
+					],
+					"AssigneeIDs":[
+						"5b5f603dc7710300012db324"
+					],
+					"ContactInfo":"Chan Tai Man,12345678"
+				},
+				"ChildTaskParams": {
+					"BoardServiceID": "c4cdb7e2-433a-418d-bbb7-818a15d469b0",
+					"Title":"Auto Create Swing card",
+					"Description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat posuere enim, et cursus elit mattis quis. Integer malesuada varius ipsum, sit amet sagittis turpis iaculis sit amet. Vestibulum risus diam, fermentum vitae libero eu, condimentum malesuada ex. Quisque tincidunt in urna in consectetur. Aliquam eget sollicitudin risus.",
+					"Location":"Morning Post Centre, 22 Dai Fat Street, Tai Po Industrial Estate, Tai Po",
+					"CategoryID":"76a0972f-f37d-47b6-8d98-da3c3d2644ff",
+					"TopicSummary": "Aliquam in nisl orci. Nunc vehicula magna ac tempus hendrerit. Integer posuere scelerisque quam non eleifend. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+					"TagNames":[],
+					"ContactInfo":"Chan Tai Man,12345678"
+				},
+				"Story": {
+					"Shape": "default",
+					"Story": true
+				},
+				"Start": "0h",
+				"End": "23h59m59s",
+				"Due": "0h"
+			}
+		}
+	},
+	{
+		"Name":   "TEST_AutoCreateMethodeCard_WIP",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["0h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "370e538a-ae18-4d35-b261-54cc658d8ecc",
+				"TaskWithcTopicCreateParams": {
+					"Title":"Auto Create Swing card (in Done stage)",
+					"Description":"",
+					"Location":"Morning Post Centre, 22 Dai Fat Street, Tai Po Industrial Estate, Tai Po",
+					"CategoryID":"76a0972f-f37d-47b6-8d98-da3c3d2644ff",
+					"StageID": "b4597b1e-27e1-428b-95bb-7ed2530edb39",
+					"TopicSummary": ""
+				},
+				"Start": "0h",
+				"End": "23h59m59s",
+				"Due": "0h"
+			}
+		}
+	},
+	{
+		"Name":   "TEST_AutoCreateMethodeCard_cat_green",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["0h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "370e538a-ae18-4d35-b261-54cc658d8ecc",
+				"TaskWithcTopicCreateParams": {
+					"Title":"Auto Create Swing card (without story) (under green cat)",
+					"Description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat posuere enim, et cursus elit mattis quis. Integer malesuada varius ipsum, sit amet sagittis turpis iaculis sit amet. Vestibulum risus diam, fermentum vitae libero eu, condimentum malesuada ex. Quisque tincidunt in urna in consectetur. Aliquam eget sollicitudin risus.",
+					"Location":"Morning Post Centre, 22 Dai Fat Street, Tai Po Industrial Estate, Tai Po",
+					"CategoryID":"e3809ac7-4d35-4a59-a3ba-9426ba022a5c",
+					"TopicSummary": "Aliquam in nisl orci. Nunc vehicula magna ac tempus hendrerit. Integer posuere scelerisque quam non eleifend. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+					"TagNames":[
+						"tag1",
+						"tag2"
+					],
+					"AssigneeIDs":[
+						"5b5f603dc7710300012db324"
+					],
+					"ContactInfo":"Chan Tai Man,12345678"
+				},
+				"ChildTaskParams": {
+					"BoardServiceID": "c4cdb7e2-433a-418d-bbb7-818a15d469b0",
+					"Title":"Auto Create Swing card",
+					"Description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat posuere enim, et cursus elit mattis quis. Integer malesuada varius ipsum, sit amet sagittis turpis iaculis sit amet. Vestibulum risus diam, fermentum vitae libero eu, condimentum malesuada ex. Quisque tincidunt in urna in consectetur. Aliquam eget sollicitudin risus.",
+					"Location":"Morning Post Centre, 22 Dai Fat Street, Tai Po Industrial Estate, Tai Po",
+					"CategoryID":"e3809ac7-4d35-4a59-a3ba-9426ba022a5c",
+					"TopicSummary": "Aliquam in nisl orci. Nunc vehicula magna ac tempus hendrerit. Integer posuere scelerisque quam non eleifend. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+					"TagNames":[],
+					"ContactInfo":"Chan Tai Man,12345678"
+				},
+				"Story": {
+					"Shape": "default",
+					"Story": false
+				},
+				"Start": "0h",
+				"End": "23h59m59s",
+				"Due": "0h"
+			}
+		}
+	},
+	{
+		"Name":   "TEST_AutoCreateMethodeCard_cat_green_yondon",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["0h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "370e538a-ae18-4d35-b261-54cc658d8ecc",
+				"TaskWithcTopicCreateParams": {
+					"Title":"Auto Create Swing card (without story) (under green cat)",
+					"Description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat posuere enim, et cursus elit mattis quis. Integer malesuada varius ipsum, sit amet sagittis turpis iaculis sit amet. Vestibulum risus diam, fermentum vitae libero eu, condimentum malesuada ex. Quisque tincidunt in urna in consectetur. Aliquam eget sollicitudin risus.",
+					"Location":"Morning Post Centre, 22 Dai Fat Street, Tai Po Industrial Estate, Tai Po",
+					"CategoryID":"e3809ac7-4d35-4a59-a3ba-9426ba022a5c",
+					"TopicSummary": "Aliquam in nisl orci. Nunc vehicula magna ac tempus hendrerit. Integer posuere scelerisque quam non eleifend. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+					"TagNames":[
+						"tag1",
+						"tag2"
+					],
+					"AssigneeIDs":[
+						"5b5f603dc7710300012db324"
+					],
+					"ContactInfo":"Chan Tai Man,12345678"
+				},
+				"ChildTaskParams": {
+					"BoardServiceID": "c4cdb7e2-433a-418d-bbb7-818a15d469b0",
+					"Title":"Auto Create Swing card",
+					"Description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat posuere enim, et cursus elit mattis quis. Integer malesuada varius ipsum, sit amet sagittis turpis iaculis sit amet. Vestibulum risus diam, fermentum vitae libero eu, condimentum malesuada ex. Quisque tincidunt in urna in consectetur. Aliquam eget sollicitudin risus.",
+					"Location":"Morning Post Centre, 22 Dai Fat Street, Tai Po Industrial Estate, Tai Po",
+					"CategoryID":"e3809ac7-4d35-4a59-a3ba-9426ba022a5c",
+					"TopicSummary": "Aliquam in nisl orci. Nunc vehicula magna ac tempus hendrerit. Integer posuere scelerisque quam non eleifend. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+					"TagNames":[],
+					"ContactInfo":"Chan Tai Man,12345678"
+				},
+				"Story": {
+					"Shape": "yondon",
+					"Story": true
+				},
+				"Start": "0h",
+				"End": "23h59m59s",
+				"Due": "0h"
+			}
+		}
+	},
+	{
+		"Name":   "TEST_AutoCreateNormalCard_Analyse",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["0h"]
+		},
+		"Task": {
+			"Name": "GenerateNormalTask",
+			"Params": {
+				"BoardID": "370e538a-ae18-4d35-b261-54cc658d8ecc",
+				"TaskCreateParams": {
+					"Title":       "Auto Create normal card",
+					"Location":    "Morning Post Centre, 22 Dai Fat Street, Tai Po Industrial Estate, Tai Po",
+					"Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat posuere enim, et cursus elit mattis quis. Integer malesuada varius ipsum, sit amet sagittis turpis iaculis sit amet. Vestibulum risus diam, fermentum vitae libero eu, condimentum malesuada ex. Quisque tincidunt in urna in consectetur. Aliquam eget sollicitudin risus.",
+					"TagNames": ["tag1", "tag2"],
+					"ContactInfo": "Chan Tai Man,12345678",
+					"StageID": "cde592e2-d0a0-47c2-8684-11035ab179c1",
+					"AssigneeIDs": [
+						"5b5f603dc7710300012db324"
+					],
+					"CategoryID":"76a0972f-f37d-47b6-8d98-da3c3d2644ff"
+				},
+				"Start": "0h",
+				"End": "23h59m59s",
+				"Due": "0h"
+			}
+		}
+	},
+	{
+		"Name":   "TEST_AutoCreateMethodeCard_Without_Default_Topic_Items",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["0h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "370e538a-ae18-4d35-b261-54cc658d8ecc",
+				"TaskWithcTopicCreateParams": {
+					"Title":"Auto Create Swing card (without default topic items)",
+					"Description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat posuere enim, et cursus elit mattis quis. Integer malesuada varius ipsum, sit amet sagittis turpis iaculis sit amet. Vestibulum risus diam, fermentum vitae libero eu, condimentum malesuada ex. Quisque tincidunt in urna in consectetur. Aliquam eget sollicitudin risus.",
+					"Location":"Morning Post Centre, 22 Dai Fat Street, Tai Po Industrial Estate, Tai Po",
+					"TopicSummary": "Aliquam in nisl orci. Nunc vehicula magna ac tempus hendrerit. Integer posuere scelerisque quam non eleifend. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+					"TagNames":[
+						"tag1",
+						"tag2"
+					],
+					"AssigneeIDs":[
+						"5b5f603dc7710300012db324"
+					],
+					"ContactInfo":"Chan Tai Man,12345678",
+					"ExcludeDefaultTopicItems": true
+				},
+				"Start": "0h",
+				"End": "23h59m59s",
+				"Due": "0h"
+			}
+		}
+	}
+]

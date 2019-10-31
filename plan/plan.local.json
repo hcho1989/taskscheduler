@@ -1,0 +1,37 @@
+[
+	{
+		"Name":   "RecoverTopicPlan",
+		"Schedule": {
+			"Pattern": {
+				"Type": "DAY"
+			},
+			"Instances": ["0h"]
+		},
+		"Task": {
+			"Name": "RecoverTopicPlan",
+			"Params": {}
+		}
+	},
+	{
+		"Name":   "TEST_AutoCreateMethodeCard_Without_Default_Topic_Items",
+		"Schedule": {
+			"Pattern": {
+				"Type": "DAY"
+			},
+			"Instances": ["0h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "a43f09b6-e947-4c5b-838b-1b2843d55d3a",
+				"TaskWithcTopicCreateParams": {
+					"Title":"Auto Create Swing card (without default topic items)",
+					"ExcludeDefaultTopicItems": true
+				},
+				"Start": "0h",
+				"End": "23h59m59s",
+				"Due": "0h"
+			}
+		}
+	}
+]

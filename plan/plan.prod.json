@@ -1,0 +1,1116 @@
+[
+	{
+		"Name":   "RecoverTopicPlan",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["0h"]
+		},
+		"Task": {
+			"Name": "RecoverTopicPlan",
+			"Params": {}
+		}
+	},
+	{
+		"Name":   "ArchiveTasks",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["0h"]
+		},
+		"Task": {
+			"Name": "ArchiveTasks",
+			"Params": {
+				"DefaultBackLogArchiveThreshold": 30,
+				"DefaultDoneArchiveThreshold":    14
+			}
+		}
+	},
+	{
+		"Name":   "DEMO_WORLD_WORLD_1",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["0h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "24cdcdc9-7c07-4aa9-9fb1-b5f891254228",
+				"TaskWithcTopicCreateParams": {
+					"Title":"TOPIC",
+					"CategoryID":"13476e21-bc2d-4ad7-90ab-40085ea5ada6",
+					"ExcludeDefaultTopicItems": true
+				},
+				"Start": "96h0m0s",
+				"End": "119h59m59s",
+				"Due": "119h59m59s"
+			}
+		}
+	},
+	{
+		"Name":   "DEMO_WORLD_WORLD_2",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["0h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "24cdcdc9-7c07-4aa9-9fb1-b5f891254228",
+				"TaskWithcTopicCreateParams": {
+					"Title":"TOPIC",
+					"CategoryID":"fd1215de-5e48-43c6-89f9-1481ddb340d8",
+					"ExcludeDefaultTopicItems": true
+				},
+				"Start": "96h0m0s",
+				"End": "119h59m59s",
+				"Due": "119h59m59s"
+			}
+		}
+	},
+
+
+	{
+		"Name":   "DEMO_WORLD_WORLD_5",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "WEEK"
+				}
+			},
+			"Instances": ["48h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "24cdcdc9-7c07-4aa9-9fb1-b5f891254228",
+				"TaskWithcTopicCreateParams": {
+					"Title":"TOPIC",
+					"CategoryID":"8ffa341d-f870-46a4-b144-151eb653559a",
+					"ExcludeDefaultTopicItems": true
+				},
+				"Start": "144h0m0s",
+				"End": "167h59m59s",
+				"Due": "167h59m59s"
+			}
+		}
+	},
+	{
+		"Name":   "DEMO_WORLD_WORLD_6",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "WEEK"
+				}
+			},
+			"Instances": ["72h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "24cdcdc9-7c07-4aa9-9fb1-b5f891254228",
+				"TaskWithcTopicCreateParams": {
+					"Title":"TOPIC",
+					"CategoryID":"8ffa341d-f870-46a4-b144-151eb653559a",
+					"ExcludeDefaultTopicItems": true
+				},
+				"Start": "168h0m0s",
+				"End": "191h59m59s",
+				"Due": "191h59m59s"
+			}
+		}
+	},
+
+	{
+		"Name":   "DEMO_WORLD_WORLD_3",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["0h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "24cdcdc9-7c07-4aa9-9fb1-b5f891254228",
+				"TaskWithcTopicCreateParams": {
+					"Title":"TOPIC",
+					"CategoryID":"3a97ab61-db09-4e57-ae8e-244021e30701",
+					"ExcludeDefaultTopicItems": true
+				},
+				"Start": "96h0m0s",
+				"End": "119h59m59s",
+				"Due": "119h59m59s"
+			}
+		}
+	},
+	{
+		"Name":   "DEMO_WORLD_WORLD_4",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["0h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "24cdcdc9-7c07-4aa9-9fb1-b5f891254228",
+				"TaskWithcTopicCreateParams": {
+					"Title":"TOPIC",
+					"CategoryID":"6ef4e1b2-1374-41e4-ae6d-993c6dcf8a69",
+					"ExcludeDefaultTopicItems": true
+				},
+				"Start": "96h0m0s",
+				"End": "119h59m59s",
+				"Due": "119h59m59s"
+			}
+		}
+	},
+
+
+
+
+
+	{
+		"Name":   "DEMO_OPED_OPED_1",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["1h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "59744377-e392-4452-877e-c23f52dee835",
+				"TaskWithcTopicCreateParams": {
+					"Title":"TOPIC",
+					"CategoryID":"f3acad35-7b77-4941-816d-3323f8492c9b"
+				},
+				"Start": "96h00m00s",
+				"End": "96h00m00s",
+				"Due": "119h59m59s"
+			}
+		}
+	},
+	{
+		"Name":   "DEMO_OPED_OPED_2",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["1h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "59744377-e392-4452-877e-c23f52dee835",
+				"TaskWithcTopicCreateParams": {
+					"Title":"TOPIC",
+					"CategoryID":"f3acad35-7b77-4941-816d-3323f8492c9b"
+				},
+				"Start": "96h00m00s",
+				"End": "96h00m00s",
+				"Due": "119h59m59s"
+			}
+		}
+	},
+	{
+		"Name":   "DEMO_OPED_OPED_3",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["1h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "59744377-e392-4452-877e-c23f52dee835",
+				"TaskWithcTopicCreateParams": {
+					"Title":"TOPIC",
+					"CategoryID":"f3acad35-7b77-4941-816d-3323f8492c9b"
+				},
+				"Start": "96h00m00s",
+				"End": "96h00m00s",
+				"Due": "119h59m59s"
+			}
+		}
+	},
+	{
+		"Name":   "DEMO_OPED_OPED_4",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["1h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "59744377-e392-4452-877e-c23f52dee835",
+				"TaskWithcTopicCreateParams": {
+					"Title":"TOPIC",
+					"CategoryID":"f3acad35-7b77-4941-816d-3323f8492c9b"
+				},
+				"Start": "96h00m00s",
+				"End": "96h00m00s",
+				"Due": "119h59m59s"
+			}
+		}
+	},
+	{
+		"Name":   "DEMO_OPED_OPED_5",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["1h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "59744377-e392-4452-877e-c23f52dee835",
+				"TaskWithcTopicCreateParams": {
+					"Title":"TOPIC",
+					"CategoryID":"f3acad35-7b77-4941-816d-3323f8492c9b"
+				},
+				"Start": "96h00m00s",
+				"End": "96h00m00s",
+				"Due": "119h59m59s"
+			}
+		}
+	},
+	{
+		"Name":   "DEMO_OPED_OPED_6",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["1h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "59744377-e392-4452-877e-c23f52dee835",
+				"TaskWithcTopicCreateParams": {
+					"Title":"LETTERS",
+					"CategoryID":"d7c10828-d1e3-4ce4-809d-aec5f4c86a8a"
+				},
+				"Start": "96h00m00s",
+				"End": "96h00m00s",
+				"Due": "119h59m59s"
+			}
+		}
+	},
+	{
+		"Name":   "DEMO_OPED_OPED_7",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["1h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "59744377-e392-4452-877e-c23f52dee835",
+				"TaskWithcTopicCreateParams": {
+					"Title":"LETTERS",
+					"CategoryID":"d7c10828-d1e3-4ce4-809d-aec5f4c86a8a"
+				},
+				"Start": "96h00m00s",
+				"End": "96h00m00s",
+				"Due": "119h59m59s"
+			}
+		}
+	},
+	{
+		"Name":   "DEMO_OPED_OPED_8",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["1h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "59744377-e392-4452-877e-c23f52dee835",
+				"TaskWithcTopicCreateParams": {
+					"Title":"LETTERS",
+					"CategoryID":"d7c10828-d1e3-4ce4-809d-aec5f4c86a8a"
+				},
+				"Start": "96h00m00s",
+				"End": "96h00m00s",
+				"Due": "119h59m59s"
+			}
+		}
+	},
+	{
+		"Name":   "DEMO_OPED_OPED_9",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["1h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "59744377-e392-4452-877e-c23f52dee835",
+				"TaskWithcTopicCreateParams": {
+					"Title":"LETTERS",
+					"CategoryID":"d7c10828-d1e3-4ce4-809d-aec5f4c86a8a"
+				},
+				"Start": "96h00m00s",
+				"End": "96h00m00s",
+				"Due": "119h59m59s"
+			}
+		}
+	},
+	{
+		"Name":   "DEMO_OPED_OPED_10",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["1h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "59744377-e392-4452-877e-c23f52dee835",
+				"TaskWithcTopicCreateParams": {
+					"Title":"LETTERS",
+					"CategoryID":"d7c10828-d1e3-4ce4-809d-aec5f4c86a8a"
+				},
+				"Start": "96h00m00s",
+				"End": "96h00m00s",
+				"Due": "119h59m59s"
+			}
+		}
+	},
+	{
+		"Name":   "DEMO_OPED_OPED_11",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["1h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "59744377-e392-4452-877e-c23f52dee835",
+				"TaskWithcTopicCreateParams": {
+					"Title":"LEADERS",
+					"CategoryID":"ad9b2754-86de-4a25-a285-df162a5e7453"
+				},
+				"Start": "96h00m00s",
+				"End": "96h00m00s",
+				"Due": "119h59m59s"
+			}
+		}
+	},
+
+
+
+	{
+		"Name":   "DEMO_CITYWEEKEND_CITYWEEKEND_1",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "WEEK"
+				}
+			},
+			"Instances": ["120h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "f7d4758e-79fa-4881-bcef-14c72ca99f28",
+				"TaskWithcTopicCreateParams": {
+					"Title":"SKYBOX",
+					"CategoryID":"a4d75f14-24fc-463e-82e3-b0972f44a606"
+				},
+				"Story": {
+					"Shape": "default",
+					"Story": false
+				},
+				"Start": "624h00m00s",
+				"End": "624h00m00s",
+				"Due": "647h59m59s"
+			}
+		}
+	},
+	{
+		"Name":   "DEMO_CITYWEEKEND_CITYWEEKEND_2",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "WEEK"
+				}
+			},
+			"Instances": ["120h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "f7d4758e-79fa-4881-bcef-14c72ca99f28",
+				"TaskWithcTopicCreateParams": {
+					"Title":"TOPIC",
+					"CategoryID":"c915c881-da77-4d8c-b094-6746e20dbd99"
+				},
+				"Start": "624h00m00s",
+				"End": "624h00m00s",
+				"Due": "647h59m59s"
+			}
+		}
+	},
+	{
+		"Name":   "DEMO_CITYWEEKEND_CITYWEEKEND_3",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "WEEK"
+				}
+			},
+			"Instances": ["120h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "f7d4758e-79fa-4881-bcef-14c72ca99f28",
+				"TaskWithcTopicCreateParams": {
+					"Title":"TOPIC",
+					"CategoryID":"6ad5555f-86c0-45dc-b102-05af8e74a468"
+				},
+				"Start": "624h00m00s",
+				"End": "624h00m00s",
+				"Due": "647h59m59s"
+			}
+		}
+	},
+	{
+		"Name":   "DEMO_CITYWEEKEND_CITYWEEKEND_4",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "WEEK"
+				}
+			},
+			"Instances": ["120h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "f7d4758e-79fa-4881-bcef-14c72ca99f28",
+				"TaskWithcTopicCreateParams": {
+					"Title":"EXPLAINER FOR LAYOUT",
+					"TopicSummary": "FOR LAYOUT ONLY. DO NOT DELETE",
+					"CategoryID":"6ad5555f-86c0-45dc-b102-05af8e74a468"
+				},
+				"Story": {
+					"Shape": "default",
+					"Story": true
+				},
+				"Start": "624h00m00s",
+				"End": "624h00m00s",
+				"Due": "647h59m59s"
+			}
+		}
+	},
+	{
+		"Name":   "DEMO_CULTURE_ONLINE_FEATURE_1",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["0h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "65969f59-7aea-415c-8eb5-5677d420e382",
+				"TaskWithcTopicCreateParams": {
+					"Title":"FEATURE",
+					"CategoryID":"ac0ddc4e-4435-4cad-ad3d-4a9c5aedca8b"
+				},
+				"Due": "743h59m59s"
+			}
+		}
+	},
+	{
+		"Name":   "DEMO_CULTURE_ONLINE_FEATURE_2",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["0h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "65969f59-7aea-415c-8eb5-5677d420e382",
+				"TaskWithcTopicCreateParams": {
+					"Title":"FEATURE",
+					"CategoryID":"ac0ddc4e-4435-4cad-ad3d-4a9c5aedca8b"
+				},
+				"Due": "743h59m59s"
+			}
+		}
+	},
+	{
+		"Name":   "DEMO_CULTURE_ONLINE_FEATURE_3",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["0h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "65969f59-7aea-415c-8eb5-5677d420e382",
+				"TaskWithcTopicCreateParams": {
+					"Title":"FEATURE",
+					"CategoryID":"ac0ddc4e-4435-4cad-ad3d-4a9c5aedca8b"
+				},
+				"Due": "743h59m59s"
+			}
+		}
+	},
+	{
+		"Name":   "DEMO_CULTURE_ONLINE_FEATURE_4",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["0h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "65969f59-7aea-415c-8eb5-5677d420e382",
+				"TaskWithcTopicCreateParams": {
+					"Title":"FEATURE",
+					"CategoryID":"ac0ddc4e-4435-4cad-ad3d-4a9c5aedca8b"
+				},
+				"Due": "743h59m59s"
+			}
+		}
+	},
+	{
+		"Name":   "DEMO_CULTURE_ONLINE_FEATURE_5",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["0h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "65969f59-7aea-415c-8eb5-5677d420e382",
+				"TaskWithcTopicCreateParams": {
+					"Title":"FILM & TV",
+					"CategoryID":"b67a0e54-4006-43b1-8fd7-59da55708645"
+				},
+				"Due": "743h59m59s"
+			}
+		}
+	},
+	{
+		"Name":   "DEMO_CULTURE_ONLINE_FEATURE_6",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["0h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "65969f59-7aea-415c-8eb5-5677d420e382",
+				"TaskWithcTopicCreateParams": {
+					"Title":"HEALTH & BEAUTY",
+					"CategoryID":"80e28ed1-1fbc-4c94-ae3f-b5429b5f242c"
+				},
+				"Due": "743h59m59s"
+			}
+		}
+	},
+	{
+		"Name":   "DEMO_CULTURE_ONLINE_FEATURE_7",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["0h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "65969f59-7aea-415c-8eb5-5677d420e382",
+				"TaskWithcTopicCreateParams": {
+					"Title":"FASHION & LUXURY",
+					"CategoryID":"20a9877b-7238-4243-a913-67eddb10c98c"
+				},
+				"Due": "743h59m59s"
+			}
+		}
+	},
+	{
+		"Name":   "DEMO_CULTURE_ONLINE_FEATURE_8",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["0h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "65969f59-7aea-415c-8eb5-5677d420e382",
+				"TaskWithcTopicCreateParams": {
+					"Title":"DIGITAL LIFE",
+					"CategoryID":"d624ffef-9935-4238-9c47-a472a0283196"
+				},
+				"Due": "743h59m59s"
+			}
+		}
+	},
+	{
+		"Name":   "DEMO_CULTURE_ONLINE_FEATURE_9",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["0h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "65969f59-7aea-415c-8eb5-5677d420e382",
+				"TaskWithcTopicCreateParams": {
+					"Title":"ARTS & ENTERTAINMENT",
+					"CategoryID":"21250390-e4a7-48f6-86f7-6fd03928f39c"
+				},
+				"Due": "743h59m59s"
+			}
+		}
+	},
+	{
+		"Name":   "DEMO_CULTURE_ONLINE_FEATURE_10",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["0h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "65969f59-7aea-415c-8eb5-5677d420e382",
+				"TaskWithcTopicCreateParams": {
+					"Title":"FAMILIES",
+					"CategoryID":"76291df1-7e00-4980-9f8d-70b8773045ec"
+				},
+				"Due": "743h59m59s"
+			}
+		}
+	},
+	{
+		"Name":   "DEMO_CULTURE_ONLINE_FEATURE_11",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["0h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "65969f59-7aea-415c-8eb5-5677d420e382",
+				"TaskWithcTopicCreateParams": {
+					"Title":"FOOD & DRINK",
+					"CategoryID":"3023fd33-b09a-4ef5-b9d4-7a78d0f161cc"
+				},
+				"Due": "743h59m59s"
+			}
+		}
+	},
+	{
+		"Name":   "DEMO_CULTURE_ONLINE_FEATURE_12",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["0h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "65969f59-7aea-415c-8eb5-5677d420e382",
+				"TaskWithcTopicCreateParams": {
+					"Title":"MUSIC",
+					"CategoryID":"a53f49c1-7b85-4f76-b756-1d75d13a6700"
+				},
+				"Due": "743h59m59s"
+			}
+		}
+	},
+	{
+		"Name":   "DEMO_CULTURE_ONLINE_FEATURE_13",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["0h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "65969f59-7aea-415c-8eb5-5677d420e382",
+				"TaskWithcTopicCreateParams": {
+					"Title":"BOOKS",
+					"CategoryID":"d0c1a493-c8e0-4b21-ba68-e2887c9c7212"
+				},
+				"Due": "743h59m59s"
+			}
+		}
+	},
+	{
+		"Name":   "DEMO_CULTURE_ONLINE_FEATURE_14",
+		"Schedule": {
+			"Period": {
+				"Type": "calendar",
+				"Params": {
+					"Period": "DAY"
+				}
+			},
+			"Instances": ["0h"]
+		},
+		"Task": {
+			"Name": "GenerateMethodeTask",
+			"Params": {
+				"BoardID": "65969f59-7aea-415c-8eb5-5677d420e382",
+				"TaskWithcTopicCreateParams": {
+					"Title":"TRAVEL & LEISURE",
+					"CategoryID":"25fbc11d-7a1c-4a02-99fb-39099b0fa874"
+				},
+				"Due": "743h59m59s"
+			}
+		}
+	},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_1","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"COVER YYMMDD","CategoryID":"da104db7-ed86-400a-ab75-69ab2a3fc608"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_2","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"CONTENTS ONE YYMMDD","CategoryID":"0728d038-8230-4c82-b836-373114d6b91d"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_3","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"CONTENTS TWO YYMMDD","CategoryID":"0728d038-8230-4c82-b836-373114d6b91d"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_4","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"ON OUR RADAR YYMMDD","CategoryID":"3cc404ca-846e-4722-b22b-500cec454410"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_5","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"LANGUAGE MATTERS YYMMDD","CategoryID":"3cc404ca-846e-4722-b22b-500cec454410"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_6","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"RANT YYMMDD","CategoryID":"3cc404ca-846e-4722-b22b-500cec454410"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_7","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"TAKETWO YYMMDD","CategoryID":"3cc404ca-846e-4722-b22b-500cec454410"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_8","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"THEN AND NOW YYMMDD","CategoryID":"3cc404ca-846e-4722-b22b-500cec454410"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_9","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"FIRST MENTION YYMMDD","CategoryID":"3cc404ca-846e-4722-b22b-500cec454410"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_10","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"MY LIFE YYMMDD","CategoryID":"3cc404ca-846e-4722-b22b-500cec454410"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_11","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"QUIZ YYMMDD","CategoryID":"3cc404ca-846e-4722-b22b-500cec454410"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_12","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"COVER STORY YYMMDD","CategoryID":"c964b78e-d341-4e4c-9a44-2558ddec845b"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_13","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"FEATUTES A YYMMDD","CategoryID":"f7ea18d8-95bb-4284-b8bf-a18e8556697b"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_14","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"FEATURES B YYMMDD","CategoryID":"f7ea18d8-95bb-4284-b8bf-a18e8556697b"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_15","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"FASHION COVER YYMMDD","CategoryID":"aadc83d4-727d-4510-b712-59b33b97369d"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_16","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"DICTATOR YYMMDD","CategoryID":"aadc83d4-727d-4510-b712-59b33b97369d"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_17","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"OUT SHOPPING YYMMDD","CategoryID":"aadc83d4-727d-4510-b712-59b33b97369d"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_18","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"STYLOMETER YYMMDD","CategoryID":"aadc83d4-727d-4510-b712-59b33b97369d"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_19","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"TALENT YYMMDD","CategoryID":"aadc83d4-727d-4510-b712-59b33b97369d"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_20","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"BY THE NUMBERS YYMMDD","CategoryID":"aadc83d4-727d-4510-b712-59b33b97369d"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_21","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"GEAR YYMMDD","CategoryID":"aadc83d4-727d-4510-b712-59b33b97369d"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_22","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"JEWELLERY YYMMDD","CategoryID":"aadc83d4-727d-4510-b712-59b33b97369d"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_23","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"MOST WANTED YYMMDD","CategoryID":"aadc83d4-727d-4510-b712-59b33b97369d"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_24","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"WATCHES YYMMDD","CategoryID":"aadc83d4-727d-4510-b712-59b33b97369d"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_25","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"TRAVEL MAIN YYMMDD","CategoryID":"70a6ef69-b39e-4c52-964a-91740c046789"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_26","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"TRAVEL STORYB YYMMDD","CategoryID":"70a6ef69-b39e-4c52-964a-91740c046789"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_27","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"TRAVELLERS CHECKS YYMMDD","CategoryID":"70a6ef69-b39e-4c52-964a-91740c046789"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_28","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"GOODBAGUGLY YYMMDD","CategoryID":"70a6ef69-b39e-4c52-964a-91740c046789"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_29","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"FIGURED OUT YYMMDD","CategoryID":"70a6ef69-b39e-4c52-964a-91740c046789"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_30","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"HOT SPOT YYMMDD","CategoryID":"70a6ef69-b39e-4c52-964a-91740c046789"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_31","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"HOME MAIN YYMMDD","CategoryID":"62dc5ad2-155f-4e09-bfad-51098baa5fc7"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_32","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"TRIED AND TESTED YYMMDD","CategoryID":"62dc5ad2-155f-4e09-bfad-51098baa5fc7"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_33","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"OBJECTS OF DESIRE YYMMDD","CategoryID":"62dc5ad2-155f-4e09-bfad-51098baa5fc7"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_34","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"DESIGNFILE SIDESTORY YYMMDD","CategoryID":"62dc5ad2-155f-4e09-bfad-51098baa5fc7"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_35","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"RECIPE MAIN FEATURE YYMMDD","CategoryID":"3023fd33-b09a-4ef5-b9d4-7a78d0f161cc"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_36","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"FOOD QANDA YYMMDD","CategoryID":"3023fd33-b09a-4ef5-b9d4-7a78d0f161cc"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_37","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"ON THE SHELF YYMMDD","CategoryID":"3023fd33-b09a-4ef5-b9d4-7a78d0f161cc"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_38","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"WINE YYMMDD","CategoryID":"3023fd33-b09a-4ef5-b9d4-7a78d0f161cc"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_39","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"MADE IN HONGKONG YYMMDD","CategoryID":"3023fd33-b09a-4ef5-b9d4-7a78d0f161cc"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_40","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"CULINARY JOURNEYS YYMMDD","CategoryID":"3023fd33-b09a-4ef5-b9d4-7a78d0f161cc"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_41","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"FOODBOOK YYMMDD","CategoryID":"3023fd33-b09a-4ef5-b9d4-7a78d0f161cc"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_42","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"EXIBITIONS YYMMDD","CategoryID":"c278a7d8-ba0a-4722-91c6-e64081fce6af"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_43","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"ALUBM REVIEWS YYMMDD","CategoryID":"c278a7d8-ba0a-4722-91c6-e64081fce6af"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_44","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"COLLECTOR YYMMDD","CategoryID":"c278a7d8-ba0a-4722-91c6-e64081fce6af"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_45","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"ART HOUSE YYMMDD","CategoryID":"c278a7d8-ba0a-4722-91c6-e64081fce6af"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_46","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"BOOKS MAIN YYMMDD","CategoryID":"c278a7d8-ba0a-4722-91c6-e64081fce6af"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_47","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"EBOOKS YYMMDD","CategoryID":"c278a7d8-ba0a-4722-91c6-e64081fce6af"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_48","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"FICTION BOOKS YYMMDD","CategoryID":"c278a7d8-ba0a-4722-91c6-e64081fce6af"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_49","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"NONFICTION BOOKS YYMMDD","CategoryID":"c278a7d8-ba0a-4722-91c6-e64081fce6af"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_50","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"REFLECTIONS YYMMDD","CategoryID":"a51ba80d-be14-4e77-8c0d-6f7465904eb5"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_51","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"HOROSCOPE YYMMDD","CategoryID":"a51ba80d-be14-4e77-8c0d-6f7465904eb5"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_52","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"CROSSWORD YYMMDD","CategoryID":"a51ba80d-be14-4e77-8c0d-6f7465904eb5"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_53","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"QUIZ ANSWERS YYMMDD","CategoryID":"a51ba80d-be14-4e77-8c0d-6f7465904eb5"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+	{"Name":"DEMO_CULTURE_POSTMAG_1_54","Schedule":{"Period":{"Type":"calendar","Params":{"Period":"WEEK"}},"Instances":["0h"]},"Task":{"Name":"GenerateMethodeTask","Params":{"BoardID":"093f958a-8a15-439d-b26d-700ca5cfad25","TaskWithcTopicCreateParams":{"Title":"ONLINE ONLY YYMMDD","CategoryID":"bb521a6b-dd88-40a7-b3a8-275df29c9fbf"},"Start":"1176h","End":"1199h59m59s","Due":"1199h59m59s"}}},
+		{
+			"Name":   "DEMO_ASIA_ASIA_1",
+			"Schedule": {
+				"Period": {
+					"Type": "calendar",
+					"Params": {
+						"Period": "DAY"
+					}
+				},
+				"Instances": ["0h"]
+			},
+			"Task": {
+				"Name": "GenerateMethodeTask",
+				"Params": {
+					"BoardID": "6af9dbeb-9f9f-48b5-aec2-1b3089b5258b",
+					"TaskWithcTopicCreateParams": {
+						"Title":"TOPIC",
+						"CategoryID": "cabd5d6f-bbfc-4493-87af-57b12a20ef60"
+					},
+					"Start": "24h",
+					"End": "47h59m59s",
+					"Due": "47h59m59s"
+				}
+			}
+		},	
+		{
+			"Name":   "DEMO_ASIA_ASIA_2",
+			"Schedule": {
+				"Period": {
+					"Type": "calendar",
+					"Params": {
+						"Period": "DAY"
+					}
+				},
+				"Instances": ["0h"]
+			},
+			"Task": {
+				"Name": "GenerateMethodeTask",
+				"Params": {
+					"BoardID": "6af9dbeb-9f9f-48b5-aec2-1b3089b5258b",
+					"TaskWithcTopicCreateParams": {
+						"Title":"TOPIC",
+						"CategoryID": "e82ecc01-de6f-4772-a369-634f788e7065"
+					},
+					"Start": "24h",
+					"End": "47h59m59s",
+					"Due": "47h59m59s"
+				}
+			}
+		},
+		{
+			"Name":   "DEMO_ASIA_ASIA_3",
+			"Schedule": {
+				"Period": {
+					"Type": "calendar",
+					"Params": {
+						"Period": "DAY"
+					}
+				},
+				"Instances": ["0h"]
+			},
+			"Task": {
+				"Name": "GenerateMethodeTask",
+				"Params": {
+					"BoardID": "6af9dbeb-9f9f-48b5-aec2-1b3089b5258b",
+					"TaskWithcTopicCreateParams": {
+						"Title":"TOPIC",
+						"CategoryID": "e82ecc01-de6f-4772-a369-634f788e7065"
+					},
+					"Start": "24h",
+					"End": "47h59m59s",
+					"Due": "47h59m59s"
+				}
+			}
+		},	
+		{
+			"Name":   "DEMO_ASIA_ASIA_4",
+			"Schedule": {
+				"Period": {
+					"Type": "calendar",
+					"Params": {
+						"Period": "DAY"
+					}
+				},
+				"Instances": ["0h"]
+			},
+			"Task": {
+				"Name": "GenerateMethodeTask",
+				"Params": {
+					"BoardID": "6af9dbeb-9f9f-48b5-aec2-1b3089b5258b",
+					"TaskWithcTopicCreateParams": {
+						"Title":"TOPIC",
+						"CategoryID": "1486515f-82e2-4ae1-b0bb-bd77bdfb65fa"
+					},
+					"Start": "24h",
+					"End": "47h59m59s",
+					"Due": "47h59m59s"
+				}
+			}
+		},	
+		{
+			"Name":   "DEMO_ASIA_ASIA_5",
+			"Schedule": {
+				"Period": {
+					"Type": "calendar",
+					"Params": {
+						"Period": "DAY"
+					}
+				},
+				"Instances": ["0h"]
+			},
+			"Task": {
+				"Name": "GenerateMethodeTask",
+				"Params": {
+					"BoardID": "6af9dbeb-9f9f-48b5-aec2-1b3089b5258b",
+					"TaskWithcTopicCreateParams": {
+						"Title":"TOPIC",
+						"CategoryID": "1486515f-82e2-4ae1-b0bb-bd77bdfb65fa"
+					},
+					"Start": "24h",
+					"End": "47h59m59s",
+					"Due": "47h59m59s"
+				}
+			}
+		},	
+
+		{
+			"Name":   "DEMO_SPORT_SPORT_1",
+			"Schedule": {
+				"Period": {
+					"Type": "calendar",
+					"Params": {
+						"Period": "DAY"
+					}
+				},
+				"Instances": ["0h"]
+			},
+			"Task": {
+				"Name": "GenerateMethodeTask",
+				"Params": {
+					"BoardID": "dec10c8d-b92f-4bfb-b469-3e1c9473205e",
+					"TaskWithcTopicCreateParams": {
+						"Title":"TODAY",
+						"CategoryID": "e95faa01-b07e-4746-975c-5d8ba1eb3dbe",
+						"ExcludeDefaultTopicItems": true
+					},
+					"Start": "360h",
+					"End": "383h59m59s",
+					"Due": "383h59m59s"
+				}
+			}
+		}
+]
