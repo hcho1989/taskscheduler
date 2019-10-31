@@ -37,7 +37,7 @@ func (s Schedule) Execute(planName string, t task.TaskInterface, currentTime tim
 			continue
 		}
 		success := false
-		fmt.Println("Checking Plan %v instance %d", planName, i)
+		fmt.Printf("Checking Plan %v instance %d", planName, i)
 		period, err := s.ResolveCurrentPeriod(currentTime)
 		if err != nil {
 			fmt.Errorf("Error when resolving period, skip, error: %s", err.Error())
@@ -57,7 +57,7 @@ func (s Schedule) Execute(planName string, t task.TaskInterface, currentTime tim
 			if err != nil {
 				fmt.Errorf("Error when executing task, error: %s", err.Error())
 			}
-			fmt.Println("Finished, success: %v", success)
+			fmt.Printf("Finished, success: %v", success)
 			afterExecute(planName, success)
 		} else {
 			fmt.Println("Skipped")
