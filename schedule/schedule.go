@@ -40,12 +40,12 @@ func (s Schedule) Execute(planName string, t task.TaskInterface, currentTime tim
 		fmt.Printf("Checking Plan %v instance %d\n", planName, i)
 		period, err := s.ResolveCurrentPeriod(currentTime)
 		if err != nil {
-			fmt.Errorf("Error when resolving period, skip, error: %s\n", err.Error())
+			fmt.Printf("Error when resolving period, skip, error: %s\n", err.Error())
 			continue
 		}
 		durationFromPstart, err := time.ParseDuration(instance)
 		if err != nil {
-			fmt.Errorf("Fail to parse start instance, skip, error: %s\n", instance, err.Error())
+			fmt.Printf("Fail to parse start instance %s, skip, error: %s\n", instance, err.Error())
 			continue
 		}
 		scheduleTime := period.GetPeriodStart().Add(durationFromPstart)
@@ -55,7 +55,7 @@ func (s Schedule) Execute(planName string, t task.TaskInterface, currentTime tim
 			fmt.Println("Running Task")
 			success, err = t.Execute(period)
 			if err != nil {
-				fmt.Errorf("Error when executing task, error: %s\n", err.Error())
+				fmt.Printf("Error when executing task, error: %s\n", err.Error())
 			}
 			fmt.Printf("Finished, success: %v\n", success)
 			afterExecute(planName, success)

@@ -30,7 +30,7 @@ func Dispatch(name string) (*TaskInterface, error) {
 		return &taskInter, nil
 	} else {
 		err := errors.New("Fail to dispatch task")
-		fmt.Errorf("Fail to dispatch task, task: %v\n", name)
+		fmt.Printf("Fail to dispatch task, task: %v\n", name)
 		return nil, err
 	}
 }
