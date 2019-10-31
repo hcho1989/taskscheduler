@@ -2,10 +2,10 @@ package task
 
 import (
 	"errors"
+	"fmt"
 	"reflect"
 
 	"github.com/hcho1989/taskscheduler/period"
-	"project.scmp.tech/technology/newsroom-system/assignment/pkg"
 )
 
 var taskRegistry = map[string]reflect.Type{}
@@ -30,7 +30,7 @@ func Dispatch(name string) (*TaskInterface, error) {
 		return &taskInter, nil
 	} else {
 		err := errors.New("Fail to dispatch task")
-		pkg.GetLogger().WithError(err).Errorf("Fail to dispatch task, task: %v", name)
+		fmt.Errorf("Fail to dispatch task, task: %v", name)
 		return nil, err
 	}
 }
