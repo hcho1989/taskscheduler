@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"project.scmp.tech/technology/newsroom-system/assignment/cmd/cronjob/mocks"
+	"github.com/hcho1989/taskscheduler/mocks"
 )
 
 func TestMain(m *testing.M) {

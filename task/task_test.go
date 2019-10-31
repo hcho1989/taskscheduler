@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"project.scmp.tech/technology/newsroom-system/assignment/cmd/cronjob/period"
+	"github.com/hcho1989/taskscheduler/period"
 )
 
 type ExampleTask struct{}

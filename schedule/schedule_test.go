@@ -8,8 +8,8 @@ import (
 	"github.com/jinzhu/gorm"
 	testify "github.com/stretchr/testify/mock"
 
-	"project.scmp.tech/technology/newsroom-system/assignment/cmd/cronjob/mocks"
-	"project.scmp.tech/technology/newsroom-system/assignment/cmd/cronjob/period"
+	"github.com/hcho1989/taskscheduler/mocks"
+	"github.com/hcho1989/taskscheduler/period"
 	"project.scmp.tech/technology/newsroom-system/assignment/pkg/lib/models"
 	repoMocks "project.scmp.tech/technology/newsroom-system/assignment/pkg/lib/repositories/mocks"
 )
