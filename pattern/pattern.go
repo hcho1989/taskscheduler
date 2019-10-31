@@ -15,7 +15,7 @@ const STATIC = "STATIC"
 
 // Pattern can resolve the Start and End of the current period
 type PatternInterface interface {
-	IsPassed(n time.Time) bool
+	IsBeyondPattern(n time.Time) bool
 	ResolveCurrentPeriod(n time.Time) (period.PeriodInterface, error)
 }
 
@@ -24,7 +24,7 @@ type InfinitePattern struct {
 	Duration time.Duration
 }
 
-func (i *InfinitePattern) IsPassed(n time.Time) bool {
+func (i *InfinitePattern) IsBeyondPattern(n time.Time) bool {
 	return false
 }
 
@@ -39,14 +39,11 @@ type FinitePattern struct {
 	End      time.Time
 }
 
-func (f *FinitePattern) IsPassed(n time.Time) bool {
+func (f *FinitePattern) IsBeyondPattern(n time.Time) bool {
 	return n.Before(f.Start) || n.After(f.End)
 }
 
 func (f *FinitePattern) ResolveCurrentPeriod(n time.Time) (period.PeriodInterface, error) {
-	if f.IsPassed(n) {
-		return nil, errors.New("current time lies beyond the defined pattern")
-	}
 	p := resolveCurrentPeriod(f.Start, n, f.Duration)
 	if p.GetPeriodEnd().After(f.End) {
 		return nil, errors.New("current period exceeded pattern period")

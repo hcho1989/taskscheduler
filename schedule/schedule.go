@@ -1,11 +1,8 @@
 package schedule
 
 import (
-	"errors"
 	"fmt"
 	"time"
-
-	"github.com/hcho1989/taskscheduler/period"
 
 	"github.com/hcho1989/taskscheduler/pattern"
 	"github.com/hcho1989/taskscheduler/task"
@@ -38,7 +35,12 @@ func (s Schedule) Execute(planName string, t task.TaskInterface, currentTime tim
 		}
 		success := false
 		fmt.Printf("Checking Plan %v instance %d\n", planName, i)
-		period, err := s.ResolveCurrentPeriod(currentTime)
+
+		if s.Pattern.IsBeyondPattern(currentTime) {
+			fmt.Println("current time lies beyond the defined pattern")
+			continue
+		}
+		period, err := s.Pattern.ResolveCurrentPeriod(currentTime)
 		if err != nil {
 			fmt.Printf("Error when resolving period, skip, error: %s\n", err.Error())
 			continue
@@ -63,19 +65,6 @@ func (s Schedule) Execute(planName string, t task.TaskInterface, currentTime tim
 			fmt.Println("Skipped")
 		}
 	}
-}
-
-func (s Schedule) ResolveCurrentPeriod(currentTime time.Time) (period.PeriodInterface, error) {
-	p, err := s.Pattern.ResolveCurrentPeriod(currentTime)
-	if err != nil {
-		return nil, err
-	}
-
-	pEnd := p.GetPeriodEnd()
-	if currentTime.After(pEnd) {
-		return nil, errors.New("Time now is after period end")
-	}
-	return p, nil
 }
 
 func SetBeforeExecute(f func(string, time.Time, time.Time) (bool, error)) {
