@@ -47,13 +47,13 @@ func (p *Plan) UnmarshalJSON(b []byte) error {
 	t, err := task.Dispatch(s.Task.Name)
 	mapstructure.Decode(s.Task.Params, t)
 	if err != nil {
-		fmt.Errorf("Fail to Dispatch Task")
+		fmt.Errorf("Fail to Dispatch Task\n")
 		return err
 	}
 	if len(s.Schedule.StartFrom) > 0 {
 		start, err = time.Parse(time.RFC3339, s.Schedule.StartFrom)
 		if err != nil {
-			fmt.Errorf("Fail to Parse start Time")
+			fmt.Errorf("Fail to Parse start Time\n")
 			return err
 		}
 	} else {
@@ -62,7 +62,7 @@ func (p *Plan) UnmarshalJSON(b []byte) error {
 	if len(s.Schedule.EndAt) > 0 {
 		end, err = time.Parse(time.RFC3339, s.Schedule.EndAt)
 		if err != nil {
-			fmt.Errorf("Fail to Parse end Time")
+			fmt.Errorf("Fail to Parse end Time\n")
 			return err
 		}
 
@@ -75,7 +75,7 @@ func (p *Plan) UnmarshalJSON(b []byte) error {
 	case pattern.WEEK:
 		pr = pattern.BuildWeekPattern()
 	case pattern.DAY:
-		pr = pattern.BuildWeekPattern()
+		pr = pattern.BuildDayPattern()
 	case pattern.EQUILENGTH:
 		start, err := time.Parse(time.RFC3339, s.Schedule.Pattern.Params.Start)
 		if err != nil {
@@ -104,7 +104,7 @@ func (p *Plan) UnmarshalJSON(b []byte) error {
 		pr = pattern.BuildStaticPattern(start, end, duration)
 	}
 	if err != nil {
-		fmt.Errorf("Fail to parse %v pattern", s.Schedule.Pattern.Type)
+		fmt.Errorf("Fail to parse %v pattern\n", s.Schedule.Pattern.Type)
 		return err
 	}
 
