@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"time"
 
-	"project.scmp.tech/technology/newsroom-system/assignment/cmd/cronjob/lib/period"
+	"github.com/hcho1989/taskscheduler/period"
 
-	"project.scmp.tech/technology/newsroom-system/assignment/cmd/cronjob/lib/pattern"
-	"project.scmp.tech/technology/newsroom-system/assignment/cmd/cronjob/lib/task"
+	"github.com/hcho1989/taskscheduler/pattern"
+	"github.com/hcho1989/taskscheduler/task"
 )
 
 var beforeExecute = (func(a string, b, c time.Time) (bool, error) { return true, nil })

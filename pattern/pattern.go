@@ -4,8 +4,8 @@ import (
 	"errors"
 	"time"
 
+	"github.com/hcho1989/taskscheduler/period"
 	"github.com/jinzhu/now"
-	"project.scmp.tech/technology/newsroom-system/assignment/cmd/cronjob/lib/period"
 )
 
 const WEEK = "WEEK"
@@ -17,7 +17,6 @@ const STATIC = "STATIC"
 type PatternInterface interface {
 	IsPassed(n time.Time) bool
 	ResolveCurrentPeriod(n time.Time) (period.PeriodInterface, error)
-	// ResolveCurrentPeriodEnd(n time.Time) time.Time
 }
 
 type InfinitePattern struct {
@@ -33,10 +32,6 @@ func (i *InfinitePattern) ResolveCurrentPeriod(n time.Time) (period.PeriodInterf
 	p := resolveCurrentPeriod(i.Start, n, i.Duration)
 	return p, nil
 }
-
-// func (i *InfinitePattern) ResolveCurrentPeriodEnd(n time.Time) time.Time {
-// 	return i.ResolveCurrentPeriodStart(n).Add(i.Duration)
-// }
 
 type FinitePattern struct {
 	Start    time.Time
@@ -58,22 +53,6 @@ func (f *FinitePattern) ResolveCurrentPeriod(n time.Time) (period.PeriodInterfac
 	}
 	return p, nil
 }
-
-// func (f *FinitePattern) ResolveCurrentPeriodStart(n time.Time) time.Time {
-// 	if f.IsPassed(n) {
-// 		panic(errors.New("current time lies beyond the defined pattern"))
-// 	}
-// 	var m time.Duration
-// 	m = time.Duration((int64(n.Sub(f.Start)) / int64(f.Duration))) * f.Duration
-
-// 	return f.Start.Add(m)
-// }
-// func (f *FinitePattern) ResolveCurrentPeriodEnd(n time.Time) time.Time {
-// 	if f.IsPassed(n) {
-// 		panic(errors.New("current time lies beyond the defined pattern"))
-// 	}
-// 	return f.ResolveCurrentPeriodStart(n).Add(f.Duration)
-// }
 
 func BuildWeekPattern() PatternInterface {
 	return &InfinitePattern{

@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/hcho1989/taskscheduler/pattern"
+	"github.com/hcho1989/taskscheduler/schedule"
+	"github.com/hcho1989/taskscheduler/task"
 	"github.com/mitchellh/mapstructure"
-	"project.scmp.tech/technology/newsroom-system/assignment/cmd/cronjob/lib/pattern"
-	"project.scmp.tech/technology/newsroom-system/assignment/cmd/cronjob/lib/schedule"
-	"project.scmp.tech/technology/newsroom-system/assignment/cmd/cronjob/lib/task"
 )
 
 var TIMEZONE, _ = time.LoadLocation("Asia/Hong_Kong")

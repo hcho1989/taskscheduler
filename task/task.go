@@ -4,7 +4,7 @@ import (
 	"errors"
 	"reflect"
 
-	"project.scmp.tech/technology/newsroom-system/assignment/cmd/cronjob/lib/period"
+	"github.com/hcho1989/taskscheduler/period"
 	"project.scmp.tech/technology/newsroom-system/assignment/pkg"
 )
 
