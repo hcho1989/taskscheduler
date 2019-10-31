@@ -26,28 +26,24 @@ func (s Schedule) Execute(planName string, t task.TaskInterface, currentTime tim
 
 	for i, instance := range s.Instances {
 		if currentTime.After(s.EndAt) {
-			fmt.Println("Time now is after schedule.EndAt, skipped", s.EndAt, currentTime)
+			fmt.Println("Time now is after schedule.EndAt, skipped.", s.EndAt, currentTime)
 			continue
 		}
 		if currentTime.Before(s.StartFrom) {
-			fmt.Println("Time now is before schedule.StartFrom, skipped", s.StartFrom, currentTime)
+			fmt.Println("Time now is before schedule.StartFrom, skipped.", s.StartFrom, currentTime)
 			continue
 		}
 		success := false
 		fmt.Printf("Checking Plan %v instance %d\n", planName, i)
 
 		if s.Pattern.IsBeyondPattern(currentTime) {
-			fmt.Println("current time lies beyond the defined pattern")
+			fmt.Println("current time lies beyond the defined pattern, skipped.")
 			continue
 		}
-		period, err := s.Pattern.ResolveCurrentPeriod(currentTime)
-		if err != nil {
-			fmt.Printf("Error when resolving period, skip, error: %s\n", err.Error())
-			continue
-		}
+		period := s.Pattern.ResolveCurrentPeriod(currentTime)
 		durationFromPstart, err := time.ParseDuration(instance)
 		if err != nil {
-			fmt.Printf("Fail to parse start instance %s, skip, error: %s\n", instance, err.Error())
+			fmt.Printf("Fail to parse start instance %s, skipped, error: %s\n", instance, err.Error())
 			continue
 		}
 		scheduleTime := period.GetPeriodStart().Add(durationFromPstart)

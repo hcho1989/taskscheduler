@@ -1,7 +1,6 @@
 package pattern
 
 import (
-	"errors"
 	"time"
 
 	"github.com/hcho1989/taskscheduler/period"
@@ -16,7 +15,7 @@ const STATIC = "STATIC"
 // Pattern can resolve the Start and End of the current period
 type PatternInterface interface {
 	IsBeyondPattern(n time.Time) bool
-	ResolveCurrentPeriod(n time.Time) (period.PeriodInterface, error)
+	ResolveCurrentPeriod(n time.Time) period.PeriodInterface
 }
 
 type InfinitePattern struct {
@@ -28,9 +27,8 @@ func (i *InfinitePattern) IsBeyondPattern(n time.Time) bool {
 	return false
 }
 
-func (i *InfinitePattern) ResolveCurrentPeriod(n time.Time) (period.PeriodInterface, error) {
-	p := resolveCurrentPeriod(i.Start, n, i.Duration)
-	return p, nil
+func (i *InfinitePattern) ResolveCurrentPeriod(n time.Time) period.PeriodInterface {
+	return resolveCurrentPeriod(i.Start, n, i.Duration)
 }
 
 type FinitePattern struct {
@@ -43,12 +41,8 @@ func (f *FinitePattern) IsBeyondPattern(n time.Time) bool {
 	return n.Before(f.Start) || n.After(f.End)
 }
 
-func (f *FinitePattern) ResolveCurrentPeriod(n time.Time) (period.PeriodInterface, error) {
-	p := resolveCurrentPeriod(f.Start, n, f.Duration)
-	if p.GetPeriodEnd().After(f.End) {
-		return nil, errors.New("current period exceeded pattern period")
-	}
-	return p, nil
+func (f *FinitePattern) ResolveCurrentPeriod(n time.Time) period.PeriodInterface {
+	return resolveCurrentPeriod(f.Start, n, f.Duration)
 }
 
 func BuildWeekPattern() PatternInterface {
