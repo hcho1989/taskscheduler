@@ -24,7 +24,7 @@ type Schedule struct {
 
 func (s Schedule) Execute(planName string, t task.TaskInterface, currentTime time.Time) {
 
-	for i, instance := range s.Instances {
+	for i, offset := range s.Instances {
 		if currentTime.After(s.EndAt) {
 			fmt.Println("Time now is after schedule.EndAt, skipped.", s.EndAt, currentTime)
 			continue
@@ -34,24 +34,24 @@ func (s Schedule) Execute(planName string, t task.TaskInterface, currentTime tim
 			continue
 		}
 		success := false
-		fmt.Printf("Checking Plan %v instance %d\n", planName, i)
+		fmt.Printf("Checking Plan %v offset %d\n", planName, i)
 
 		if s.Pattern.IsBeyondPattern(currentTime) {
 			fmt.Println("current time lies beyond the defined pattern, skipped.")
 			continue
 		}
-		period := s.Pattern.ResolveCurrentPeriod(currentTime)
-		durationFromPstart, err := time.ParseDuration(instance)
+		instance := s.Pattern.ResolveInstance(currentTime)
+		offsetDur, err := time.ParseDuration(offset)
 		if err != nil {
-			fmt.Printf("Fail to parse start instance %s, skipped, error: %s\n", instance, err.Error())
+			fmt.Printf("Fail to parse start offset %s, skipped, error: %s\n", offset, err.Error())
 			continue
 		}
-		scheduleTime := period.GetPeriodStart().Add(durationFromPstart)
+		scheduleTime := instance.Add(offsetDur)
 
 		ok, err := beforeExecute(planName, scheduleTime, currentTime)
 		if ok {
 			fmt.Println("Running Task")
-			success, err = t.Execute(period)
+			success, err = t.Execute(scheduleTime)
 			if err != nil {
 				fmt.Printf("Error when executing task, error: %s\n", err.Error())
 			}

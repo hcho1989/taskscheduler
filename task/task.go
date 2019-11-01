@@ -4,14 +4,13 @@ import (
 	"errors"
 	"fmt"
 	"reflect"
-
-	"github.com/hcho1989/taskscheduler/period"
+	"time"
 )
 
 var taskRegistry = map[string]reflect.Type{}
 
 type TaskInterface interface {
-	Execute(p period.PeriodInterface) (bool, error)
+	Execute(instance time.Time) (bool, error)
 }
 
 type TaskConfig struct {
