@@ -50,12 +50,12 @@ func (s Schedule) Execute(planName string, t task.TaskInterface, currentTime tim
 
 		ok, err := beforeExecute(planName, scheduleTime, currentTime)
 		if ok {
-			fmt.Println("Running Task")
+			fmt.Printf("Running Task: %s\n", planName)
 			success, err = t.Execute(scheduleTime)
 			if err != nil {
 				fmt.Printf("Error when executing task, error: %s\n", err.Error())
 			}
-			fmt.Printf("Finished, success: %v\n", success)
+			fmt.Printf("%s Finished, success: %v\n", planName, success)
 			afterExecute(planName, success)
 		} else {
 			fmt.Println("Skipped")
