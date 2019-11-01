@@ -12,7 +12,7 @@ type ScheduleInterface struct {
 	mock.Mock
 }
 
-// Execute provides a mock function with given fields: planName, t, forceRun, forceInstance, noRecord, currentTime
-func (_m *ScheduleInterface) Execute(planName string, t task.TaskInterface, forceRun string, forceInstance int, noRecord int, currentTime time.Time) {
-	_m.Called(planName, t, forceRun, forceInstance, noRecord, currentTime)
+// Execute provides a mock function with given fields: planName, t, currentTime
+func (_m *ScheduleInterface) Execute(planName string, t task.TaskInterface, currentTime time.Time) {
+	_m.Called(planName, t, currentTime)
 }
