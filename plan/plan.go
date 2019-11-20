@@ -110,13 +110,13 @@ func (p *Plan) UnmarshalJSON(b []byte) error {
 
 	*p = Plan{
 		Name: s.Name,
-		Schedule: schedule.Schedule{
+		Schedule: &schedule.Schedule{
 			StartFrom: start,
 			EndAt:     end,
 			Pattern:   pr,
 			Instances: s.Schedule.Instances,
 		},
-		Task: *t,
+		Task: t,
 	}
 	return nil
 }

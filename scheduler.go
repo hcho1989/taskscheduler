@@ -37,8 +37,8 @@ func (s *Scheduler) Execute(currentTime time.Time) {
 }
 
 func (s *Scheduler) init() {
-	s.afterScheduleExecute = defaultAfterScheduleExecute
-	s.beforeScheduleExecute = defaultBeforeScheduleExecute
+	s.SetAfterScheduleExecute(defaultAfterScheduleExecute)
+	s.SetBeforeScheduleExecute(defaultBeforeScheduleExecute)
 }
 
 func (s *Scheduler) SetBeforeScheduleExecute(f func(a string, b, c time.Time) (bool, error)) {

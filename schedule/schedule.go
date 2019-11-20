@@ -64,10 +64,10 @@ func (s Schedule) Execute(planName string, t task.TaskInterface, currentTime tim
 	}
 }
 
-func (s Schedule) SetBeforeExecute(f func(string, time.Time, time.Time) (bool, error)) {
+func (s *Schedule) SetBeforeExecute(f func(string, time.Time, time.Time) (bool, error)) {
 	s.beforeExecute = f
 }
 
-func (s Schedule) SetAfterExecute(f func(string, bool)) {
+func (s *Schedule) SetAfterExecute(f func(string, bool)) {
 	s.afterExecute = f
 }
