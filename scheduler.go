@@ -5,6 +5,7 @@ import (
 	"time"
 
 	"github.com/hcho1989/taskscheduler/plan"
+	"github.com/hcho1989/taskscheduler/task"
 )
 
 var defaultBeforeScheduleExecute = (func(a string, b, c time.Time) (bool, error) { return true, nil })
@@ -50,4 +51,8 @@ func (s *Scheduler) SetAfterScheduleExecute(f func(string, bool)) {
 
 func (s *Scheduler) SetLoader(l loaderInterface) {
 	s.loader = l
+}
+
+func (s *Scheduler) RegisterTask(name string, t task.TaskInterface) {
+	task.Register(name, t)
 }
