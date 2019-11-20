@@ -8,18 +8,19 @@ import (
 	"github.com/hcho1989/taskscheduler/task"
 )
 
-var beforeExecute = (func(a string, b, c time.Time) (bool, error) { return true, nil })
-var afterExecute = (func(string, bool) { return })
-
 type ScheduleInterface interface {
+	SetBeforeExecute(f func(string, time.Time, time.Time) (bool, error))
+	SetAfterExecute(f func(string, bool))
 	Execute(planName string, t task.TaskInterface, currentTime time.Time)
 }
 
 type Schedule struct {
-	StartFrom time.Time
-	EndAt     time.Time
-	Pattern   pattern.PatternInterface
-	Instances []string // Duration from beginning of period
+	StartFrom     time.Time
+	EndAt         time.Time
+	Pattern       pattern.PatternInterface
+	Instances     []string // Duration from beginning of period
+	beforeExecute func(a string, b, c time.Time) (bool, error)
+	afterExecute  func(string, bool)
 }
 
 func (s Schedule) Execute(planName string, t task.TaskInterface, currentTime time.Time) {
@@ -48,7 +49,7 @@ func (s Schedule) Execute(planName string, t task.TaskInterface, currentTime tim
 		}
 		scheduleTime := instance.Add(offsetDur)
 
-		ok, err := beforeExecute(planName, scheduleTime, currentTime)
+		ok, err := s.beforeExecute(planName, scheduleTime, currentTime)
 		if ok {
 			fmt.Printf("Running Task: %s\n", planName)
 			success, err = t.Execute(scheduleTime)
@@ -56,17 +57,17 @@ func (s Schedule) Execute(planName string, t task.TaskInterface, currentTime tim
 				fmt.Printf("Error when executing task, error: %s\n", err.Error())
 			}
 			fmt.Printf("%s Finished, success: %v\n", planName, success)
-			afterExecute(planName, success)
+			s.afterExecute(planName, success)
 		} else {
 			fmt.Println("Skipped")
 		}
 	}
 }
 
-func SetBeforeExecute(f func(string, time.Time, time.Time) (bool, error)) {
-	beforeExecute = f
+func (s Schedule) SetBeforeExecute(f func(string, time.Time, time.Time) (bool, error)) {
+	s.beforeExecute = f
 }
 
-func SetAfterExecute(f func(string, bool)) {
-	afterExecute = f
+func (s Schedule) SetAfterExecute(f func(string, bool)) {
+	s.afterExecute = f
 }
