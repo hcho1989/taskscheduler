@@ -73,9 +73,9 @@ func (p *Plan) UnmarshalJSON(b []byte) error {
 	switch s.Schedule.Pattern.Type {
 
 	case pattern.WEEK:
-		pr = pattern.BuildWeekPattern()
+		pr = pattern.BuildWeekPattern(time.Now().In(TIMEZONE))
 	case pattern.DAY:
-		pr = pattern.BuildDayPattern()
+		pr = pattern.BuildDayPattern(time.Now().In(TIMEZONE))
 	case pattern.EQUILENGTH:
 		start, err := time.Parse(time.RFC3339, s.Schedule.Pattern.Params.Start)
 		if err != nil {
@@ -123,4 +123,8 @@ func (p *Plan) UnmarshalJSON(b []byte) error {
 
 func (p *Plan) Execute(currentTime time.Time) {
 	p.Schedule.Execute(p.Name, p.Task, currentTime)
+}
+
+func SetTimeZone(tz string) {
+	TIMEZONE, _ = time.LoadLocation(tz)
 }
