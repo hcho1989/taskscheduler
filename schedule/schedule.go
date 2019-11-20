@@ -42,14 +42,12 @@ func (s Schedule) Execute(planName string, t task.TaskInterface, currentTime tim
 			continue
 		}
 		instance := s.Pattern.ResolveInstance(currentTime)
-		fmt.Println("08fwh08ewh80wfwfe", instance)
 		offsetDur, err := time.ParseDuration(offset)
 		if err != nil {
 			fmt.Printf("Fail to parse start offset %s, skipped, error: %s\n", offset, err.Error())
 			continue
 		}
 		scheduleTime := instance.Add(offsetDur)
-		fmt.Println("wgihi80gh084h2084g3", scheduleTime)
 
 		ok, err := s.beforeExecute(planName, scheduleTime, currentTime)
 		if ok {
