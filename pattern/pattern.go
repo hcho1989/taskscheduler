@@ -46,16 +46,16 @@ func (f *FiniteEquilength) ResolveInstance(n time.Time) time.Time {
 	return resolveInstance(f.Start, n, f.Duration)
 }
 
-func BuildWeekPattern() PatternInterface {
+func BuildWeekPattern(t time.Time) PatternInterface {
 	return &InfiniteEquilength{
-		Instance: now.BeginningOfWeek(),
+		Instance: now.New(t).BeginningOfWeek(),
 		Duration: time.Duration(7 * 24 * time.Hour),
 	}
 }
 
-func BuildDayPattern() PatternInterface {
+func BuildDayPattern(t time.Time) PatternInterface {
 	return &InfiniteEquilength{
-		Instance: now.BeginningOfDay(),
+		Instance: now.New(t).BeginningOfDay(),
 		Duration: time.Duration(24 * time.Hour),
 	}
 }
