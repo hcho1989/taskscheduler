@@ -5,9 +5,10 @@ go:
 
 before_install:
   - go get -t -v ./...
+  - go get github.com/axw/gocov/gocov
 
 script:
-  - go test -race -coverprofile=coverage.txt -covermode=atomic
+  - gocov test -v ./... > coverage.out
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
