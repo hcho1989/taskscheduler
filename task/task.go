@@ -13,11 +13,6 @@ type TaskInterface interface {
 	Execute(instance time.Time) (bool, error)
 }
 
-type TaskConfig struct {
-	Name   string
-	Params map[string]interface{}
-}
-
 func Register(name string, t TaskInterface) {
 	taskRegistry[name] = reflect.TypeOf(t)
 }

@@ -4,6 +4,8 @@ import (
 	"errors"
 	"time"
 
+	"github.com/hcho1989/taskscheduler/schedule"
+
 	"github.com/hcho1989/taskscheduler/plan"
 	"github.com/hcho1989/taskscheduler/task"
 )
@@ -17,6 +19,7 @@ type loaderInterface interface {
 
 type Scheduler struct {
 	loader                loaderInterface
+	timezone              *time.Location
 	beforeScheduleExecute func(a string, b, c time.Time) (bool, error)
 	afterScheduleExecute  func(string, bool)
 }
@@ -51,6 +54,10 @@ func (s *Scheduler) SetAfterScheduleExecute(f func(string, bool)) {
 
 func (s *Scheduler) SetLoader(l loaderInterface) {
 	s.loader = l
+}
+
+func (s *Scheduler) SetTimeZone(tz string) error {
+	return schedule.SetTimeZone(tz)
 }
 
 func (s *Scheduler) RegisterTask(name string, t task.TaskInterface) {
