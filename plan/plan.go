@@ -34,7 +34,7 @@ func (p *Plan) UnmarshalJSON(b []byte) error {
 }
 
 func (p *Plan) Execute(currentTime time.Time) {
-	p.Schedule.Execute(p.Name, p.Task, currentTime)
+	p.Schedule.Execute(p.Name, p.Task, curentTime)
 }
 
 type planJSON struct {
