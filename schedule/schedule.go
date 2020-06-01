@@ -32,24 +32,24 @@ func (s Schedule) Execute(planName string, t task.TaskInterface, currentTime tim
 
 	if currentTime.After(s.EndAt) {
 		fmt.Println("Time now is after schedule.EndAt, skipped.", s.EndAt, currentTime)
-		continue
+		return
 	}
 	if currentTime.Before(s.StartFrom) {
 		fmt.Println("Time now is before schedule.StartFrom, skipped.", s.StartFrom, currentTime)
-		continue
+		return
 	}
 	success := false
 	fmt.Printf("Checking Plan %v offset %d\n", planName, s.Offset)
 
 	if s.Pattern.IsBeyondPattern(currentTime) {
 		fmt.Println("current time lies beyond the defined pattern, skipped.")
-		continue
+		return
 	}
 	instance := s.Pattern.ResolveInstance(currentTime)
 	offsetDur, err = calulateDuration(s.Offset)
 	if err != nil {
 		fmt.Printf("Fail to parse start offset %s, skipped, error: %s\n", offset, err.Error())
-		continue
+		return
 	}
 	scheduleTime := instance.Add(offsetDur)
 
