@@ -60,7 +60,7 @@ func (s Schedule) execute(planName, offset string, t task.TaskInterface, current
 		return
 	}
 	instance := s.Pattern.ResolveInstance(currentTime)
-	offsetDur, err := utils.CalculateDuration(offset)
+	offsetDur, err := utils.ParseDuration(offset)
 	if err != nil {
 		fmt.Printf("Fail to parse start offset %s, skipped, error: %s\n", offset, err.Error())
 		return
@@ -129,7 +129,7 @@ func (s *Schedule) UnmarshalJSON(b []byte) error {
 		if err != nil {
 			return err
 		}
-		_duration, err := time.ParseDuration(j.Pattern.Params.Duration)
+		_duration, err := utils.ParseDuration(j.Pattern.Params.Duration)
 		if err != nil {
 			return err
 		}
@@ -145,7 +145,7 @@ func (s *Schedule) UnmarshalJSON(b []byte) error {
 		if err != nil {
 			return err
 		}
-		_duration, err := time.ParseDuration(j.Pattern.Params.Duration)
+		_duration, err := utils.ParseDuration(j.Pattern.Params.Duration)
 		if err != nil {
 			return err
 		}

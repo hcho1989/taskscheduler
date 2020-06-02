@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-func CalculateDuration(a string) (time.Duration, error) {
+func ParseDuration(a string) (time.Duration, error) {
 	if len(a) == 0 {
 		r, _ := time.ParseDuration("0h")
 		return r, nil
@@ -29,7 +29,7 @@ func CalculateDuration(a string) (time.Duration, error) {
 		if err != nil {
 			return 0, err
 		}
-		hmsDuration, err := CalculateDuration(hms)
+		hmsDuration, err := ParseDuration(hms)
 		if err != nil {
 			return 0, err
 		}
