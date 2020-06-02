@@ -2,6 +2,7 @@ package schedule
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 	"strconv"
 	"strings"
@@ -21,7 +22,8 @@ type Schedule struct {
 	StartFrom     time.Time
 	EndAt         time.Time
 	Pattern       pattern.PatternInterface
-	Offset        *string // Duration from beginning of period, only support format "%sd", d stands for days
+	Offset        string   // Duration from beginning of period, only support format "%sd", d stands for days
+	Instances     []string // Deprecated, will be removed soon
 	beforeExecute func(a string, b, c time.Time) (bool, error)
 	afterExecute  func(string, bool)
 }
@@ -29,7 +31,17 @@ type Schedule struct {
 var TIMEZONE, _ = time.LoadLocation("Asia/Hong_Kong")
 
 func (s Schedule) Execute(planName string, t task.TaskInterface, currentTime time.Time) {
+	if len(s.Offset) > 0 {
+		s.execute(planName, s.Offset, t, currentTime)
+		return
+	}
+	for _, offset := range s.Instances {
+		s.execute(planName, offset, t, currentTime)
+		return
+	}
+}
 
+func (s Schedule) execute(planName, offset string, t task.TaskInterface, currentTime time.Time) {
 	if currentTime.After(s.EndAt) {
 		fmt.Println("Time now is after schedule.EndAt, skipped.", s.EndAt, currentTime)
 		return
@@ -39,14 +51,14 @@ func (s Schedule) Execute(planName string, t task.TaskInterface, currentTime tim
 		return
 	}
 	success := false
-	fmt.Printf("Checking Plan %v offset %d\n", planName, s.Offset)
+	fmt.Printf("Checking Plan %v offset %v\n", planName, offset)
 
 	if s.Pattern.IsBeyondPattern(currentTime) {
 		fmt.Println("current time lies beyond the defined pattern, skipped.")
 		return
 	}
 	instance := s.Pattern.ResolveInstance(currentTime)
-	offsetDur, err = calulateDuration(s.Offset)
+	offsetDur, err := calulateDuration(offset)
 	if err != nil {
 		fmt.Printf("Fail to parse start offset %s, skipped, error: %s\n", offset, err.Error())
 		return
@@ -65,6 +77,7 @@ func (s Schedule) Execute(planName string, t task.TaskInterface, currentTime tim
 	} else {
 		fmt.Println("Skipped")
 	}
+	return
 }
 
 func (s *Schedule) SetBeforeExecute(f func(string, time.Time, time.Time) (bool, error)) {
@@ -143,6 +156,7 @@ func (s *Schedule) UnmarshalJSON(b []byte) error {
 	s.StartFrom = start
 	s.EndAt = end
 	s.Pattern = pr
+	s.Offset = j.Offset
 	s.Instances = j.Instances
 	return nil
 }
@@ -161,6 +175,7 @@ type scheduleJSON struct {
 	Pattern   patternJSON
 	StartFrom string
 	EndAt     string
+	Offset    string
 	Instances []string
 }
 
@@ -173,21 +188,33 @@ type patternJSON struct {
 	}
 }
 
-func calulateDuration(a *string) (*time.Duration, error) {
-	if a == nil {
+func calulateDuration(a string) (time.Duration, error) {
+	if len(a) == 0 {
 		r, _ := time.ParseDuration("0h")
-		return &r, nil
+		return r, nil
 	}
-	if len(a) > 0 && strings.Index(a, "d") == len(a)-1 {
-		// fmt.Println(int(a[:len(a)-1]))
-		i, err := strconv.ParseInt(a, 10, 64)
-		if err != nil {
-			return nil, err
+	if strings.Index(a, "d") > 0 {
+		temp := strings.Split(a, "d")
+		if len(temp) > 2 {
+			return 0, errors.New("duration string has more than one d")
 		}
-		r, err := time.ParseDuration(fmt.Printf("%sh", string(i*24)))
+		days := temp[0]
+		hms := temp[1]
+
+		i, err := strconv.ParseInt(days, 10, 64)
 		if err != nil {
-			return nil, err
+			return 0, err
 		}
-		return &r, nil
+		r, err := time.ParseDuration(fmt.Sprintf("%vh", i*24))
+		if err != nil {
+			return 0, err
+		}
+		hmsDuration, err := calulateDuration(hms)
+		if err != nil {
+			return 0, err
+		}
+		result := r + hmsDuration
+		return result, nil
 	}
+	return time.ParseDuration(a)
 }
