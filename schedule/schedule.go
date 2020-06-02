@@ -2,14 +2,12 @@ package schedule
 
 import (
 	"encoding/json"
-	"errors"
 	"fmt"
-	"strconv"
-	"strings"
 	"time"
 
 	"github.com/hcho1989/taskscheduler/pattern"
 	"github.com/hcho1989/taskscheduler/task"
+	"github.com/hcho1989/taskscheduler/utils"
 )
 
 type ScheduleInterface interface {
@@ -35,10 +33,14 @@ func (s Schedule) Execute(planName string, t task.TaskInterface, currentTime tim
 		s.execute(planName, s.Offset, t, currentTime)
 		return
 	}
-	for _, offset := range s.Instances {
-		s.execute(planName, offset, t, currentTime)
+	if len(s.Instances) > 0 {
+		for _, offset := range s.Instances {
+			s.execute(planName, offset, t, currentTime)
+		}
 		return
 	}
+	s.execute(planName, "0h", t, currentTime)
+	return
 }
 
 func (s Schedule) execute(planName, offset string, t task.TaskInterface, currentTime time.Time) {
@@ -58,7 +60,7 @@ func (s Schedule) execute(planName, offset string, t task.TaskInterface, current
 		return
 	}
 	instance := s.Pattern.ResolveInstance(currentTime)
-	offsetDur, err := calulateDuration(offset)
+	offsetDur, err := utils.CalculateDuration(offset)
 	if err != nil {
 		fmt.Printf("Fail to parse start offset %s, skipped, error: %s\n", offset, err.Error())
 		return
@@ -186,35 +188,4 @@ type patternJSON struct {
 		End      string
 		Duration string
 	}
-}
-
-func calulateDuration(a string) (time.Duration, error) {
-	if len(a) == 0 {
-		r, _ := time.ParseDuration("0h")
-		return r, nil
-	}
-	if strings.Index(a, "d") > 0 {
-		temp := strings.Split(a, "d")
-		if len(temp) > 2 {
-			return 0, errors.New("duration string has more than one d")
-		}
-		days := temp[0]
-		hms := temp[1]
-
-		i, err := strconv.ParseInt(days, 10, 64)
-		if err != nil {
-			return 0, err
-		}
-		r, err := time.ParseDuration(fmt.Sprintf("%vh", i*24))
-		if err != nil {
-			return 0, err
-		}
-		hmsDuration, err := calulateDuration(hms)
-		if err != nil {
-			return 0, err
-		}
-		result := r + hmsDuration
-		return result, nil
-	}
-	return time.ParseDuration(a)
 }
