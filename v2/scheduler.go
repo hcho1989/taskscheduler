@@ -4,10 +4,10 @@ import (
 	"errors"
 	"time"
 
-	"github.com/hcho1989/taskscheduler/schedule"
+	"github.com/hcho1989/taskscheduler/v2/schedule"
 
-	"github.com/hcho1989/taskscheduler/plan"
-	"github.com/hcho1989/taskscheduler/task"
+	"github.com/hcho1989/taskscheduler/v2/plan"
+	"github.com/hcho1989/taskscheduler/v2/task"
 )
 
 var defaultBeforeScheduleExecute = (func(a string, b, c time.Time) (bool, error) { return true, nil })

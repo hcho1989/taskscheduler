@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/hcho1989/taskscheduler/pattern"
-	"github.com/hcho1989/taskscheduler/task"
-	"github.com/hcho1989/taskscheduler/utils"
+	"github.com/hcho1989/taskscheduler/v2/pattern"
+	"github.com/hcho1989/taskscheduler/v2/task"
+	"github.com/hcho1989/taskscheduler/v2/utils"
 )
 
 type ScheduleInterface interface {

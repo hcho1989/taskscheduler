@@ -5,9 +5,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/hcho1989/taskscheduler/pattern"
-	"github.com/hcho1989/taskscheduler/schedule"
-	"github.com/hcho1989/taskscheduler/task"
+	"github.com/hcho1989/taskscheduler/v2/pattern"
+	"github.com/hcho1989/taskscheduler/v2/schedule"
+	"github.com/hcho1989/taskscheduler/v2/task"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/suite"
